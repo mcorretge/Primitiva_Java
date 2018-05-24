@@ -83,12 +83,12 @@ public class Primitiva {
 		System.out.println("| 6.- Consultar Numero Premiat                          |"); 
 		System.out.println("| 7.- Consultar Numero Complementari                    |"); 
 		System.out.println("| 8.- Consultar Numero Reintegrament                    |"); 
-		System.out.println("| 9.- S'ha cobrat l'aposta?                             |"); 
-		System.out.println("|   91.- Marcar com a cobrada                           |"); 
-		System.out.println("|   92.- Marcar com NO cobrada                          |");  
-		System.out.println("| 10.- Data de l'aposta                                 |");
-		System.out.print("|.......................................................|\n");
-		System.out.println("| 11.- Buscar aposta a partir del identificador         |"); 
+		System.out.println("| 9.- Consultar Data de l'ultima aposta                 |"); 
+		System.out.println("| 10.- S'ha cobrat l'aposta?                            |"); 
+		System.out.println("|   11.- Marcar com a cobrada                           |"); 
+		System.out.println("|   12.- Marcar com NO cobrada                          |");  
+		System.out.print("|.......................................................|\n"); 
+		System.out.println("| 13.- Buscar aposta a traves de ID                     |");
 		System.out.print("\\-------------------------------------------------------/\n"); 
 		
 		String entrada = getData();
@@ -168,23 +168,23 @@ public class Primitiva {
 			System.out.println("id: " + dades[contadorApostesFetes-1][0] + "\nNum. Reintegrament: " + dades[contadorApostesFetes-1][3]);
 			break;
 		case 9:
+			System.out.println("id: " + dades[contadorApostesFetes-1][0] + "\nNum. Data: " + ExtraDades[contadorApostesFetes-1][0]);
+			break;
+		case 10:
 			System.out.print("id: " + dades[contadorApostesFetes-1][0] + "\nNum. Ha estat cobrat?: ");
 			if (dades[contadorApostesFetes-1][4] == 0)
 			{				System.out.println("No.");			}
 			else {	System.out.println("Si.");			}
 			break;
-		case 91:
+		case 11:
 			dades[contadorApostesFetes-1][4] = 1;
 			System.out.println("Cobrada");
 			break;
-		case 92:
+		case 12:
 			dades[contadorApostesFetes-1][4] = 0;
 			System.out.println("Pendent de cobrar");
 			break;
-		case 10:
-			System.out.println("Data: " + ExtraDades[contadorApostesFetes-1][0]);
-			break;
-		case 11:
+		case 13:
 			System.out.print("\tQuin ID tenia l'aposta que estas buscant? -> "); 				
 			int idABuscar = Integer.parseInt(getData());			
 			for(int i=0; i< contadorApostesFetes; i++)
